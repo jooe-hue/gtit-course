@@ -1,31 +1,22 @@
-def debug_print(debug_msg=None, **kwargs):
-
-    if debug_msg:
-        print(debug_msg)
-
-    for key, value in kwargs.items():
-        print("{}: {}".format(key, value))
-
-
 def mergesort(array):
-    debug_print("array:", array=array)
+    print(f"array: {array}")
 
     if len(array) <= 1:
         return array
 
     m = len(array) // 2
-    debug_print("m:", m=m)
+    print(f"m: {m}")
 
     left = mergesort(array[:m])
     right = mergesort(array[m:])
 
-    debug_print("Merging...")
-    debug_print("left:", left=left)
-    debug_print("right:", right=right)
+    print("Merging...")
+    print(f"left: {left}")
+    print(f"right: {right}")
 
     merged = merge(left, right)
 
-    debug_print("merged:", merged=merged)
+    print(f"merged: {merged}")
 
     return merged
 
@@ -59,8 +50,8 @@ if __name__ == "__main__":
             print("Invalid input.")
             quit(1)
 
-    debug_print("input_list:", input_list=input_list)
-    debug_print("value_list:", value_list=value_list)
+    print(f"input_list: {input_list}")
+    print(f"value_list: {value_list}")
 
     sorted_list = mergesort(value_list)
     print(sorted_list)
